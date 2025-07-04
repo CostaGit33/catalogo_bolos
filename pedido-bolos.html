@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Bolo - Karla Cake</title>
+    <link rel="stylesheet" href="pedido.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <!-- Conteúdo do cabeçalho, se houver -->
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Adicionar Pedido de Bolo</h2>
+                <p class="text-sm text-gray-600 mt-2">
+                    <a href="catalogo_bolos.html" class="text-blue-600 hover:underline">← Ver Catálogo de Bolos</a>
+                </p>
+            </div>
+            <div class="card-content">
+                <form id="order-cakes-form" class="space-y-4">
+
+                    <!-- Nome Cliente -->
+                    <div>
+                        <label for="nomeCliente" class="label">Nome do Cliente *</label>
+                        <input type="text" id="nomeCliente" class="input" required>
+                        <p id="nomeCliente-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Telefone -->
+                    <div>
+                        <label for="telefone" class="label">Telefone *</label>
+                        <input type="tel" id="telefone" class="input" required minlength="10">
+                        <p id="telefone-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Entrada -->
+                    <div>
+                        <label for="entrada" class="label">Entrada (R$) *</label>
+                        <input type="number" id="entrada" class="input" value="0" min="0" step="0.01" required>
+                        <p id="entrada-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Data de Entrega -->
+                    <div>
+                        <label for="dataEntrega" class="label">Data de Entrega *</label>
+                        <input type="date" id="dataEntrega" class="input" required>
+                        <p id="dataEntrega-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Arte/Tema -->
+                    <div>
+                        <label for="arte" class="label">Arte/Tema *</label>
+                        <input type="text" id="arte" class="input" required>
+                        <p id="arte-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Tamanho (Custom Select) -->
+                    <div>
+                        <label for="tamanhoSelect" class="label">Tamanho *</label>
+                        <div class="custom-select" id="tamanhoSelect">
+                            <button type="button" class="select-trigger">
+                                <span class="select-value">Escolha o tamanho</span>
+                            </button>
+                            <div class="select-content">
+                                <div class="select-item" data-value="10cm">10cm - R$75,00</div>
+                                <div class="select-item" data-value="12cm">12cm - R$100,00</div>
+                                <div class="select-item" data-value="15cm">15cm - R$120,00</div>
+                                <div class="select-item" data-value="18cm">18cm - R$150,00</div>
+                                <div class="select-item" data-value="20cm">20cm - R$175,00</div> <!-- Corrigido para R$175,00 -->
+                                <div class="select-item" data-value="25cm">25cm - R$210,00</div>
+                            </div>
+                            <input type="hidden" id="tamanho" name="tamanho" required>
+                        </div>
+                        <p id="tamanho-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Recheio 1 (Custom Select) -->
+                    <div>
+                        <label for="recheio1Select" class="label">Recheio 1 *</label>
+                        <div class="custom-select" id="recheio1Select">
+                            <button type="button" class="select-trigger">
+                                <span class="select-value">Escolha o recheio 1</span>
+                            </button>
+                            <div class="select-content">
+                                <div class="select-item" data-value="Chocolate Meio Amargo">Chocolate Meio Amargo</div>
+                                <div class="select-item" data-value="Chocolate Ao Leite">Chocolate Ao Leite</div>
+                                <div class="select-item" data-value="Chocolate Branco">Chocolate Branco</div>
+                                <div class="select-item" data-value="Beijinho">Beijinho</div>
+                                <div class="select-item" data-value="Ninho">Ninho</div>
+                                <div class="select-item" data-value="4 Leites">4 Leites</div>
+                                <div class="select-item" data-value="Doce Leite">Doce Leite</div>
+                                <div class="select-item" data-value="Brigadeiro de Paçoca">Brigadeiro de Paçoca</div>
+                            </div>
+                            <input type="hidden" id="recheio1" name="recheio1" required>
+                        </div>
+                        <p id="recheio1-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Recheio 2 (Custom Select) -->
+                    <div>
+                        <label for="recheio2Select" class="label">Recheio 2 *</label>
+                        <div class="custom-select" id="recheio2Select">
+                            <button type="button" class="select-trigger">
+                                <span class="select-value">Escolha o recheio 2</span>
+                            </button>
+                            <div class="select-content">
+                                <div class="select-item" data-value="Chocolate Meio Amargo">Chocolate Meio Amargo</div>
+                                <div class="select-item" data-value="Chocolate Ao Leite">Chocolate Ao Leite</div>
+                                <div class="select-item" data-value="Chocolate Branco">Chocolate Branco</div>
+                                <div class="select-item" data-value="Beijinho">Beijinho</div>
+                                <div class="select-item" data-value="Ninho">Ninho</div>
+                                <div class="select-item" data-value="4 Leites">4 Leites</div>
+                                <div class="select-item" data-value="Doce Leite">Doce Leite</div>
+                                <div class="select-item" data-value="Brigadeiro de Paçoca">Brigadeiro de Paçoca</div>
+                            </div>
+                            <input type="hidden" id="recheio2" name="recheio2" required>
+                        </div>
+                        <p id="recheio2-error" class="error-message text-red-500 text-sm mt-1"></p>
+                    </div>
+
+                    <!-- Adicional (Custom Select) -->
+                    <div>
+                        <label for="adicionalSelect" class="label">Adicional</label>
+                        <div class="custom-select" id="adicionalSelect">
+                            <button type="button" class="select-trigger">
+                                <span class="select-value">Selecione adicional</span>
+                            </button>
+                            <div class="select-content">
+                                <div class="select-item" data-value="nenhum">Nenhum</div>
+                                <div class="select-item" data-value="Morango in Natura">Morango in Natura</div>
+                                <div class="select-item" data-value="Geleia Morango">Geleia Morango</div>
+                                <div class="select-item" data-value="Abacaxi">Abacaxi</div>
+                                <div class="select-item" data-value="Ameixa">Ameixa</div>
+                                <div class="select-item" data-value="Nutella">Nutella</div>
+                            </div>
+                            <input type="hidden" id="adicional" name="adicional">
+                        </div>
+                    </div>
+
+                    <!-- Observações -->
+                    <div>
+                        <label for="observacoes" class="label">Observações</label>
+                        <textarea id="observacoes" class="textarea" rows="3"></textarea>
+                    </div>
+
+                    <!-- Resumo de Preço -->
+                    <div class="border-t pt-4">
+                        <p><strong>Valor Bolo:</strong> <span id="valorBolo">R$ 0,00</span></p>
+                        <p><strong>Adicional:</strong> <span id="valorAdicional">R$ 0,00</span></p>
+                        <p><strong>Total Estimado:</strong> <span id="valorTotal">R$ 0,00</span></p>
+                    </div>
+
+                    <button type="submit" class="button w-full bg-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle w-5 h-5 mr-2"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                        Enviar Pedido por WhatsApp
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Karla Cake. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <span style="color: #ff689f;">&hearts;</span> por [Seu Nome/Empresa]</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

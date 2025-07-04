@@ -1,0 +1,226 @@
+/* style.css - Karla Cake Contato */
+
+/* Variáveis de cor */
+:root {
+  --primary-color: #ff689f;
+  --secondary-color: #fce4ec;
+  --accent-color: #ffeef5;
+  --text-color: #333;
+  --text-muted: #777;
+  --bg-color: #fff;
+  --footer-color: #f8f8f8;
+  --button-hover: #ff4e8b;
+}
+
+/* Reset e base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Utilitários */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray-600 {
+  color: var(--text-muted);
+}
+
+.text-gray-800 {
+  color: var(--text-color);
+}
+
+.text-pink-600 {
+  color: var(--primary-color);
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Header */
+.navbar {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  color: white;
+}
+
+.navbar-container a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-content p {
+  margin-bottom: 0.5rem;
+}
+
+.bg-pink-50 {
+  background-color: var(--accent-color);
+}
+
+/* Botões */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.variant-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.variant-outline:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.size-lg {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--footer-color);
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.footer span {
+  font-weight: bold;
+}
+
+/* Ícones SVG */
+svg {
+  vertical-align: middle;
+}
+
+/* Responsividade extra */
+@media (max-width: 640px) {
+  .flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .gap-4 {
+    gap: 1rem;
+  }
+}
